@@ -10,7 +10,13 @@ package list;
  * @author david-pc
  */
 public class Jogos {
-
+    String ID_Jogo;
+    String ID_Plataforma;
+    String genero;
+    String Nome;
+    String descricao;
+    String requesitos;
+    
     public void setNome(String string) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
