@@ -31,8 +31,9 @@ public class Cliente implements Serializable {
     }
 
     public Cliente(String zé_Miguel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
+    
 
     public String getFname() {
         return fname;
