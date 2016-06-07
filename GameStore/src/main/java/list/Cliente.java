@@ -5,87 +5,38 @@
  */
 package list;
 
-import java.io.Serializable;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
+
 
 /**
  *
- * @author david-pc
+ * @author Jorge-pc
  */
 @Entity
-public class Cliente implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String fname;
-    private String lname;
-    
-    
-    
+@XmlRootElement
+public class Cliente extends User{
+    private Car car;
     public Cliente(){
+        super();
+    }
+    public Cliente( String email, String password){
+        super(email,password);
+    }
+    
+    public Car getCar() {
+        return car;
     }
 
-    public Cliente(String zé_Miguel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String getFname() {
-        return fname;
-    }
-
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
-
-    public String getLname() {
-        return lname;
-    }
-
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Cliente)) {
-            return false;
-        }
-        Cliente other = (Cliente) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
     @Override
     public String toString() {
-        return "list.Cliente[ id=" + id + " ]";
-    }
-
-    public void addjogo(Jogos jogo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+        return "{\"ClientId\":\"" + super.getUserId() + "\", \"Name\":\"" + super.getName()+ "\", \"Email\":\"" + super.getEmail() + "\","
+                + " \"Address\":\"" + super.getAddress() + "\"}";
+    }   
 }

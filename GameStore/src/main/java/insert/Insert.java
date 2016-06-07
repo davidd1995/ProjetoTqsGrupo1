@@ -9,11 +9,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import list.Jogos;
+import list.Games;
 
 /**
  *
- * @author david-pc
+ * @author Jorge-pc
  */
 public class Insert {
     
@@ -29,16 +29,14 @@ public class Insert {
         boolean createNewEntries = (q.getResultList().size() == 0);
 
         if (createNewEntries) {
-            Cliente x = new Cliente("Zé Miguel");
+            Cliente x = new Cliente("Zé Miguel","123");
 
     
             em.persist(x);
             for (int i = 1; i <= 3; i++) {
-                Jogos jogo = new Jogos();
+                Games jogo = new Games();
                 jogo.setNome("Jogo" + i);
                 em.persist(jogo);
-
-                x.addjogo(jogo);
                 em.persist(jogo);
                 em.persist(x);
             }

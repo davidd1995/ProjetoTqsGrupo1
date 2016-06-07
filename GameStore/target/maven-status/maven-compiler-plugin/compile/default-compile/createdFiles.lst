@@ -1,4 +1,7 @@
 list\Jogos.class
 list\Cliente_.class
+sv\Servlet.class
 insert\Insert.class
+insert\DeployServletOnJersey.class
 list\Cliente.class
+list\Compra.class
