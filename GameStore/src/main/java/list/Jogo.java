@@ -17,13 +17,7 @@ public class Jogo {
    private String plataforma;
    private Categoria ct;
 
-    public Categoria getCt() {
-        return ct;
-    }
-
-    public void setCt(Categoria ct) {
-        this.ct = ct;
-    }
+  
 
     public String getNome() {
         return nome;

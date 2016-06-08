@@ -27,7 +27,5 @@ public class Feedback {
 
     public void setIsPositive(boolean isPositive) {
         this.isPositive = isPositive;
-    }
-    
-    
+    }   
 }

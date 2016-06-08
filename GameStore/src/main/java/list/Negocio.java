@@ -18,15 +18,16 @@ public class Negocio {
         return precoFinal;
     }
 
-    public void setPrecoFinal(double precoFinal) {
-        this.precoFinal = precoFinal;
+    public Negocio(Leilao ll){
+        this.ll = ll;
+        setPrecoFinal();
+    }
+    
+    public void setPrecoFinal() {
+        this.precoFinal = ll.getPrecoBase();
     }
     
     public Leilao getLl() {
         return ll;
-    }
-
-    public void setLl(Leilao ll) {
-        this.ll = ll;
     }
 }

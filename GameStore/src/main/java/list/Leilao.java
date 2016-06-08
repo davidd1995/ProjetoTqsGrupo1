@@ -4,27 +4,26 @@
  * and open the template in the editor.
  */
 package list;
-
-
-
 /**
  *
  * @author david-pc
  */
 public class Leilao {
  
-    private Jogo jogo;
+
     private String dt;
     private double precoBase;
     private Licitacao vencedora;
     private Utilizador vendedor;
-    
+    private Jogo jogo;
+        
     public Licitacao getVencedora() {
         return vencedora;
     }
 
     public void setVencedora(Licitacao vencedora) {
         this.vencedora = vencedora;
+        setPrecoBase(vencedora.getLicitacao());
     }
     
     public Jogo getJogo() {
@@ -54,7 +53,8 @@ public class Leilao {
     public Utilizador getVendedor(){
         return vendedor;
     }
+    
     public void setVendedor(Utilizador user){
-            this.vendedor=user;
+        this.vendedor=user;
     }
 }
