@@ -10,16 +10,16 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import list.Games;
+import list.Jogo;
 
 /**
  *
  * @author Jorge-pc
  */
 @Stateless
-public class GameFacade extends AbstractFacade<Games> {
+public class GameFacade extends AbstractFacade<Jogo> {
 
-    @PersistenceContext(unitName = "todos")
+    @PersistenceContext(unitName = "trabalho")
     private EntityManager em;
 
     @Override
@@ -28,10 +28,10 @@ public class GameFacade extends AbstractFacade<Games> {
     }
 
     public GameFacade() {
-        super(Games.class);
+        super(Jogo.class);
     }
     
-    public List<Games> getProductsByCategory(String jogo){
+    public List<Jogo> getGameByName(String jogo){
         Query query = em.createQuery("SELECT g FROM Games g WHERE g.Game_id = '" +jogo + "'");
         return query.getResultList();
     }

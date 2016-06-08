@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="com.mycompany_GameStore_war_1.0-SNAPSHOTPU" transaction-type="JTA">
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="trabalho" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <jta-data-source>tqssandbox</jta-data-source>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <jta-data-source>GameStore</jta-data-source>
+    <class>list.Jogo</class>
+    <class>list.Categoria</class>
+    <class>list.Feedback</class>
+    <class>list.Leilao</class>
+    <class>list.Licitacao</class>
+    <class>list.Negocio</class>
+    <class>list.Utilizador</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
-      <property name="jdbc:mysql://deti-tqs-vm1.ua.pt:3306/tqssandbox?zeroDateTimeBehavior=convertToNull"/>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
+      <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://deti-tqs-vm1.ua.pt:3306/GameStore?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="tqs"/>
       <property name="javax.persistence.jdbc.password" value="password"/>
+      <property name="eclipselink.target-database" value="MySQL"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="eclipselink.ddl-generation.output-mode" value="database"/>
     </properties>
   </persistence-unit>
 </persistence>

@@ -6,7 +6,7 @@
 package external;
 
 //import contracts.POSContract;
-import list.Cliente;
+import list.Utilizador;
 /**
  *
  * @author Jorge-pc
@@ -25,7 +25,7 @@ public class Pay {
         return pay.setTargetBankAcount(NIB);
     }
     
-    public double makePayment(Cliente c, double amountToPay){
+    public double makePayment(Utilizador c, double amountToPay){
         return pay.makePayment(c, amountToPay);
     }
     

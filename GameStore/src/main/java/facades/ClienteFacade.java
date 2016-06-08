@@ -10,16 +10,16 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import list.Cliente;
+import list.Utilizador;
 
 /**
  *
  * @author Jorge-pc
  */
 @Stateless
-public class ClienteFacade extends AbstractFacade<Cliente> {
+public class ClienteFacade extends AbstractFacade<Utilizador> {
 
-    @PersistenceContext(unitName = "todos")
+    @PersistenceContext(unitName = "trabalho")
     private EntityManager em;
 
     @Override
@@ -28,38 +28,40 @@ public class ClienteFacade extends AbstractFacade<Cliente> {
     }
 
     public ClienteFacade() {
-        super(Cliente.class);
+        super(Utilizador.class);
     }
 
-    public boolean validUser(String user) {
+    public boolean validUser(String userName) {
 
-        Query query = em.createQuery("SELECT c FROM Client c WHERE c.user = '" + user + "'");
-        List<Cliente> c = query.getResultList();
-        return c.size() < 1;
+       // Query query = em.createQuery("SELECT c FROM Client c WHERE c.user = '" + userName + "'");
+       // List<Utilizador> c = query.getResultList();
+        return true ;//c.size() < 1;
     }
 
-    public boolean clientExists(String user) {
+    public boolean clientExists(String userName) {
 
-        Query query = em.createQuery("SELECT c FROM Client c WHERE c.user = '" + user + "'");
-        List<Cliente> c = query.getResultList();
-        return !c.isEmpty();
+        //Query query = em.createQuery("SELECT c FROM Client c WHERE c.user = '" + user + "'");
+       // List<Cliente> c = query.getResultList();
+        String c= "Antonio";
+        return c.equals(userName);
     }
 
-    public Cliente getClientByUser(String user) {
+    /*public Utilizador getClientByUser(String user) {
 
         Query query = em.createQuery("SELECT c FROM Client c WHERE c.user = '" + user + "'");
-        Cliente c = (Cliente) query.getSingleResult();
+        Utilizador c = (Utilizador) query.getSingleResult();
         return c;
-    }
+    }*/
 
-    public boolean validLogin(String user, String password) {
+    public boolean validLogin(String userName, String password) {
         
-        if(clientExists(user)){
-            Query query = em.createQuery("SELECT c FROM Client c WHERE c.user = '" + user + "' "
-                    + "AND c.password = '"+ password +"'");
-            Cliente c = (Cliente) query.getSingleResult();
-
-            if (password.equals(c.getPass())){
+        if(clientExists(userName)){
+            
+          //  Query query = em.createQuery("SELECT c FROM Client c WHERE c.user = '" + user + "' "
+          //          + "AND c.password = '"+ password +"'");
+          //  Cliente c = (Cliente) query.getSingleResult();
+            String c="123";
+            if (password.equals(c)){
                 System.out.println("logged");
                 return true;
             }

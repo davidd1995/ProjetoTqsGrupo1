@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package insert;
-import list.Cliente;
+import list.Utilizador;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import list.Games;
+import list.Jogo;
 
 /**
  *
@@ -29,16 +29,16 @@ public class Insert {
         boolean createNewEntries = (q.getResultList().size() == 0);
 
         if (createNewEntries) {
-            Cliente x = new Cliente("Zé Miguel","123");
+         //   Utilizador x = new Utilizador("Zé Miguel","123");
 
     
-            em.persist(x);
+            //em.persist(x);
             for (int i = 1; i <= 3; i++) {
-                Games jogo = new Games();
+                Jogo jogo = new Jogo();
                 jogo.setNome("Jogo" + i);
                 em.persist(jogo);
                 em.persist(jogo);
-                em.persist(x);
+                //em.persist(x);
             }
 
         }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package external;
-import list.Cliente;
+import list.Utilizador;
 /**
  *
  * @author Jorge-pc
@@ -12,6 +12,6 @@ import list.Cliente;
 public interface Payment {
     public double getInterestFeeds();
     public boolean setTargetBankAcount(int NIB);
-    public double makePayment(Cliente c, double amountToPay);
+    public double makePayment(Utilizador c, double amountToPay);
     
 }
