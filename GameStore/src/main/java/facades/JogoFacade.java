@@ -17,7 +17,7 @@ import list.Jogo;
  * @author Jorge-pc
  */
 @Stateless
-public class GameFacade extends AbstractFacade<Jogo> {
+public class JogoFacade extends AbstractFacade<Jogo> {
 
     @PersistenceContext(unitName = "trabalho")
     private EntityManager em;
@@ -27,7 +27,7 @@ public class GameFacade extends AbstractFacade<Jogo> {
         return em;
     }
 
-    public GameFacade() {
+    public JogoFacade() {
         super(Jogo.class);
     }
     

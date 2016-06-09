@@ -17,7 +17,7 @@ import list.Categoria;
  * @author fabio
  */
 @Stateless
-public class CategoryFacade extends AbstractFacade<Categoria>{
+public class CategoriaFacade extends AbstractFacade<Categoria>{
     
     @PersistenceContext(unitName = "trabalho")
     private EntityManager em;
@@ -27,7 +27,7 @@ public class CategoryFacade extends AbstractFacade<Categoria>{
         return em;
     }
     
-    public CategoryFacade() {
+    public CategoriaFacade() {
         super(Categoria.class);
     }
     

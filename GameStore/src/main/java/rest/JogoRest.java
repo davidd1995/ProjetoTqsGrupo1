@@ -5,7 +5,7 @@
  */
 package rest;
 
-import facades.GameFacade;
+import facades.JogoFacade;
 import list.Jogo;
 import java.util.List;
 import javax.ejb.EJB;
@@ -16,6 +16,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.PathParam;
 import list.Categoria;
+
 /**
  *
  * @author david-pc
@@ -24,7 +25,7 @@ import list.Categoria;
 public class JogoRest {
 
     @EJB
-    private GameFacade facade = new GameFacade();
+    private JogoFacade facade = new JogoFacade();
 
 
     @GET
@@ -38,7 +39,7 @@ public class JogoRest {
 
     @POST
     @Path("/{nome}/{descricao}/{requisitos}/{plataforma}/{categoria}")
-    public Response add(@PathParam(" nome;") String nome,@PathParam("descricao") String desc
+    public Response add(@PathParam("nome") String nome,@PathParam("descricao") String desc
             ,@PathParam("requisitos") String req, @PathParam("plataforma") String plataforma, @PathParam("categoria") Categoria ct) {
 
         Jogo game = new Jogo();
@@ -78,7 +79,7 @@ public class JogoRest {
 
     @POST
     @Path("/{nome}/{descricao}/{requisitos}/{plataforma}/{categoria}")
-    public Response edit(@PathParam(" nome;") String nome,@PathParam("descricao") String desc
+    public Response edit(@PathParam("nome") String nome,@PathParam("descricao") String desc
             ,@PathParam("requisitos") String req, @PathParam("plataforma") String plataforma, @PathParam("categoria") Categoria ct) {
 
         Jogo game = facade.find(nome);
@@ -95,4 +96,3 @@ public class JogoRest {
         return Response.status(200).entity("{\"State\":\"OK\"}").build();
     }
 }
-

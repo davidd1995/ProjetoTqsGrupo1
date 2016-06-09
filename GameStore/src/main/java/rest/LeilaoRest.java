@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package rest;
-import facades.SaleFacade;
-import facades.ClienteFacade;
-import facades.GameFacade;
+import facades.LeilaoFacade;
+import facades.UtilizadorFacade;
+import facades.JogoFacade;
 import list.Utilizador;
 import list.Jogo;
 import list.Negocio;
@@ -29,13 +29,13 @@ import list.Leilao;
 public class LeilaoRest {
 
     @EJB
-    private SaleFacade sale = new SaleFacade();
+    private LeilaoFacade sale = new LeilaoFacade();
 
     @EJB
-    private ClienteFacade cliente = new ClienteFacade();
+    private UtilizadorFacade cliente = new UtilizadorFacade();
 
     @EJB
-    private GameFacade game = new GameFacade();
+    private JogoFacade game = new JogoFacade();
 
     @GET
     @Path("/")

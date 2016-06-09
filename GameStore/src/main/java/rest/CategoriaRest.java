@@ -5,7 +5,7 @@
  */
 package rest;
 
-import facades.CategoryFacade;
+import facades.CategoriaFacade;
 import list.Categoria;
 import java.util.List;
 import javax.ejb.EJB;
@@ -25,7 +25,7 @@ import javax.ws.rs.PathParam;
 public class CategoriaRest {
     
     @EJB
-    private CategoryFacade facade = new CategoryFacade();
+    private CategoriaFacade facade = new CategoriaFacade();
     
     @GET
     @Path("/")

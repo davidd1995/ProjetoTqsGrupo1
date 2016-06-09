@@ -5,7 +5,7 @@
  */
 package rest;
 
-import facades.ClienteFacade;
+import facades.UtilizadorFacade;
 import list.Utilizador;
 import java.util.List;
 import javax.ejb.EJB;
@@ -23,7 +23,7 @@ import javax.ws.rs.PathParam;
 public class UtilizadorRest {
 
     @EJB
-    private ClienteFacade facade = new ClienteFacade();
+    private UtilizadorFacade facade = new UtilizadorFacade();
 
     @GET
     @Path("/")

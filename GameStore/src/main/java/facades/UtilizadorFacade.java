@@ -17,7 +17,7 @@ import list.Utilizador;
  * @author Jorge-pc
  */
 @Stateless
-public class ClienteFacade extends AbstractFacade<Utilizador> {
+public class UtilizadorFacade extends AbstractFacade<Utilizador> {
 
     @PersistenceContext(unitName = "trabalho")
     private EntityManager em;
@@ -27,7 +27,7 @@ public class ClienteFacade extends AbstractFacade<Utilizador> {
         return em;
     }
 
-    public ClienteFacade() {
+    public UtilizadorFacade() {
         super(Utilizador.class);
     }
 
@@ -46,12 +46,12 @@ public class ClienteFacade extends AbstractFacade<Utilizador> {
         return c.equals(userName);
     }
 
-    /*public Utilizador getClientByUser(String user) {
+    public Utilizador getClientByUser(String user) {
 
         Query query = em.createQuery("SELECT c FROM Client c WHERE c.user = '" + user + "'");
         Utilizador c = (Utilizador) query.getSingleResult();
         return c;
-    }*/
+    }
 
     public boolean validLogin(String userName, String password) {
         

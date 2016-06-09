@@ -17,7 +17,7 @@ import list.Leilao;
  * @author david-pc
  */
 @Stateless
-public class SaleFacade extends AbstractFacade<Leilao> {
+public class LeilaoFacade extends AbstractFacade<Leilao> {
 
     @PersistenceContext(unitName = "trabalho")
     private EntityManager em;
@@ -27,7 +27,7 @@ public class SaleFacade extends AbstractFacade<Leilao> {
         return em;
     }
 
-    public SaleFacade() {
+    public LeilaoFacade() {
         super(Leilao.class);
     }
     
